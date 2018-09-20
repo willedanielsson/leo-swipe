@@ -1,7 +1,7 @@
 import React from 'react';
 import Swiper from 'react-native-deck-swiper'
 import { StyleSheet, Text, View, Button } from 'react-native'
-import Card from '../components/Card'
+import Card from '../components/Cards'
 import DATA from '../mockData/bets'
 
 export default class SwipeScreen extends React.Component {
