@@ -17,17 +17,23 @@ export default class TeamContainer extends React.Component {
 
 const styles = StyleSheet.create({
   teamsContainer: {
-    flex: 2,
-    flexDirection: 'column',
-    justifyContent: "center"
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.12)',
+    backgroundColor: "#fd5c3c"
   },
   teamText: {
     textAlign: "center",
-    fontSize: 25
+    fontSize: 26,
+    color: "#fff"
   },
   vsText: {
+    fontSize: 18,
     textAlign: "center",
-    fontSize: 18
+    color: "#fff"
   }
 });
 

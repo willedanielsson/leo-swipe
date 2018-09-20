@@ -9,7 +9,7 @@ const DATA = [
     home: 'Manchester United',
     away: 'Arsenal',
     outcome: 'home',
-    odds: '2.34'
+    odds: '1.87'
   },
   {
     home: 'Valencia',

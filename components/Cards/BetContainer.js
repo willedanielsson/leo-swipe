@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   betContainer: {
     flex: 1,
     flexDirection: 'column',
+    marginTop: 20
   },
   outcomeText: {
     textAlign: "center",
@@ -35,7 +36,9 @@ const styles = StyleSheet.create({
   },
   oddsText: {
     textAlign: "center",
-    fontSize: 28
+    marginTop: 20,
+    fontSize: 40,
+    fontWeight: 'bold'
   }
 });
 

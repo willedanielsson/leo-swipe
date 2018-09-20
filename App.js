@@ -28,6 +28,7 @@ export default createMaterialTopTabNavigator(
     }
   },
   {
+    swipeEnabled: false,
     tabBarComponent: Navbar
   }
 );

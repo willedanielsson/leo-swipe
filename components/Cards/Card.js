@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     borderRadius: 4,
-    borderWidth: 2,
-    borderColor: "#E8E8E8",
+    borderWidth: 1,
+    borderColor: "rgba(0, 0, 0, 0.12)",
     backgroundColor: "white",
     flexDirection: 'column',
     padding: 20
