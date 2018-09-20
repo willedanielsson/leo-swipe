@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
 export default class Navbar extends React.Component {
 
@@ -21,7 +21,7 @@ export default class Navbar extends React.Component {
     return (
       <View style={styles.navbarContainer}>
         <TouchableOpacity
-          style={styles.item}
+          style={[styles.item, styles.floatLeft]}
           onPress={() => this.onPress('Settings')}
         >
           <Ionicons name="md-settings" size={32} color="#fff" />
@@ -36,7 +36,7 @@ export default class Navbar extends React.Component {
           style={[styles.item, styles.floatRight]}
           onPress={() => this.onPress('Bets')}
           >
-          <Ionicons name="md-ionic" size={32} color="#fff" />
+          <FontAwesome name="archive" size={28} color="#fff" />
         </TouchableOpacity>
       </View>
     );
@@ -55,7 +55,12 @@ const styles = StyleSheet.create({
   },
   item: {
     flex: 1,
-    marginTop: 5
+    marginTop: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  floatLeft: {
+    alignItems: 'flex-start'
   },
   logoContainer: {
     alignItems: 'center',
