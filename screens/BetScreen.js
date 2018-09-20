@@ -27,6 +27,7 @@ export default class BetScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 10
+    padding: 10,
+    backgroundColor: '#f7f7f7'
   }
 })
