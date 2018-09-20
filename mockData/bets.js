@@ -19,4 +19,27 @@ const DATA = [
   }
 ]
 
-export default DATA
+const betHistoryData = [
+  {
+    game: "Manchester United vs Arsenal",
+    date: "2018-09-21",
+    status: 'ongoing'
+  },
+  {
+    game: "Chelsea vs Watford",
+    date: "2018-08-23",
+    status: 'win'
+  },
+  {
+    game: "PSG vs Lyon",
+    date: "2018-08-21",
+    status: 'loss'
+  },
+  {
+    game: "Elfsborg vs Hammarby",
+    date: "2018-06-12",
+    status: 'win'
+  }
+]
+
+export { DATA, betHistoryData }

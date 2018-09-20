@@ -2,7 +2,8 @@ import React from 'react';
 import Swiper from 'react-native-deck-swiper'
 import { StyleSheet, View } from 'react-native'
 import Card from '../components/Cards'
-import DATA from '../mockData/bets'
+import { DATA } from '../mockData/bets'
+import { FontAwesome } from '@expo/vector-icons';
 
 export default class SwipeScreen extends React.Component {
 
@@ -59,12 +60,9 @@ const styles = StyleSheet.create({
 
 const labelConfig = {
   left: {
+    element: <FontAwesome name="times-circle" size={50} color="#e60000" />,
     title: 'NOPE',
     style: {
-      label: {
-        backgroundColor: '#e60000',
-        color: 'white'
-      },
       wrapper: {
         flexDirection: 'column',
         alignItems: 'flex-end',
@@ -75,12 +73,9 @@ const labelConfig = {
     }
   },
   right: {
+    element: <FontAwesome name="check-circle" size={50} color="#1daa63" />,
     title: 'BET',
     style: {
-      label: {
-        backgroundColor: '#1daa63',
-        color: 'white'
-      },
       wrapper: {
         flexDirection: 'column',
         alignItems: 'flex-start',
@@ -94,7 +89,7 @@ const labelConfig = {
     title: 'COMBO',
     style: {
       label: {
-        backgroundColor: '#fcbe31',
+        backgroundColor: '#0084b4',
         color: 'white'
       },
       wrapper: {
