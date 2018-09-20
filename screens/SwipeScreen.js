@@ -1,9 +1,8 @@
 import React from 'react';
 import Swiper from 'react-native-deck-swiper'
 import { StyleSheet, Text, View, Button } from 'react-native'
-import Navbar from './Navbar'
 
-export default class SwipeView extends React.Component {
+export default class SwipeScreen extends React.Component {
 
   constructor(props) {
     super(props)
@@ -22,7 +21,6 @@ export default class SwipeView extends React.Component {
   };
 
   onSwipe = () => {
-    console.log('Swiped on ', this.state.cardIndex)
     this.setState({ cardIndex: this.state.cardIndex + 1 })
   }
 
@@ -33,23 +31,27 @@ export default class SwipeView extends React.Component {
 
   render() {
     return (
-      <Swiper
-          cards={this.state.cards}
-          renderCard={this.renderCard}
-          onSwiped={this.onSwipe}
-          onSwipedAll={this.onSwipeAll}
-          cardIndex={this.state.cardIndex}
-          backgroundColor={'#f7f7f7'}
-          stackSize={3}
-          cardVerticalMargin={100}
-          >
-          <Navbar />
-      </Swiper>
+      <View style={styles.container}>
+        <Swiper
+            cards={this.state.cards}
+            renderCard={this.renderCard}
+            onSwiped={this.onSwipe}
+            onSwipedAll={this.onSwipeAll}
+            cardIndex={this.state.cardIndex}
+            backgroundColor={'#f7f7f7'}
+            stackSize={3}
+            cardVerticalMargin={100}
+            >
+        </Swiper>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   card: {
     flex: 1,
     borderRadius: 4,

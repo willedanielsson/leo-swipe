@@ -1,30 +1,33 @@
-
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import SwipeView from './components/SwipeView'
+import React from 'react';
+import SwipeScreen from './screens/SwipeScreen'
+import BetScreen from './screens/BetScreen'
+import SettingsScreen from './screens/SettingsScreen'
 import Navbar from './components/Navbar'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        {/* <View style={styles.navbar}>
-          <Text>Hello</Text>
-        </View> */}
-        <View style={styles.swipe}>
-          <SwipeView />
-        </View>
-      </View>
-    );
-  }
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#F5FCFF"
+import { createMaterialTopTabNavigator } from 'react-navigation';
+
+export default createMaterialTopTabNavigator(
+  {
+    Swipe: {
+      screen: SwipeScreen,
+      navigationOptions: () => ({
+				tabBarLabel: "Swipe"
+			})
+    },
+    Bets: {
+      screen: BetScreen,
+      navigationOptions: () => ({
+				tabBarLabel: "Bets"
+			})
+    },
+    Settings: {
+      screen: SettingsScreen,
+      navigationOptions: () => ({
+				tabBarLabel: "Settings"
+			})
+    }
   },
-  swipe: {
-    flex: 1,
-    backgroundColor: 'blue'
+  {
+    tabBarComponent: Navbar
   }
-});
+);
