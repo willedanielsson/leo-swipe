@@ -1,23 +1,21 @@
 import React from 'react';
 import Swiper from 'react-native-deck-swiper'
 import { StyleSheet, Text, View, Button } from 'react-native'
+import Card from '../components/Card'
+import DATA from '../mockData/bets'
 
 export default class SwipeScreen extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      cards: ['TEST', 'MORE', 'TEST', 'WHAT', 'EVEN', 'MORE', 'TEST'],
+      cards: DATA,
       cardIndex: 0
     }
   }
 
   renderCard = (card, index) => {
-    return (
-      <View style={styles.card}>
-        <Text style={styles.text}>{card} - {index}</Text>
-      </View>
-    )
+    return <Card card={card} index={index}/>
   };
 
   onSwipe = () => {
@@ -51,18 +49,5 @@ export default class SwipeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  card: {
-    flex: 1,
-    borderRadius: 4,
-    borderWidth: 2,
-    borderColor: "#E8E8E8",
-    justifyContent: "center",
-    backgroundColor: "white"
-  },
-  text: {
-    textAlign: "center",
-    fontSize: 50,
-    backgroundColor: "transparent"
   }
 });
