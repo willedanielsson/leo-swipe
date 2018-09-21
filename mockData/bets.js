@@ -4,42 +4,48 @@ const DATA = [
     away: 'AIK',
     outcome: 'home',
     odds: '1.01',
-    league:"Football - Sweden - Allsvenskan"
+    league:"Football - Sweden - Allsvenskan",
+    date: '14 oct 15.00'
   },
   {
     home: 'Manchester United',
     away: 'Arsenal',
     league: "Football - England - Premier League",
     outcome: 'home',
-    odds: '1.87'
+    odds: '1.87',
+    date: '13 oct 20.00'
   },
   {
     home: 'Valencia',
     away: 'Atletico Madrid',
     league: "Football - Spain - La Liga",
     outcome: 'draw',
-    odds: '3.40'
+    odds: '3.40',
+    date: '14 oct 14.00'
   },
   {
     home: 'Napoli',
     away: 'Juventus',
     league: "Football - Italy - Serie A",
     outcome: 'home',
-    odds: '2.50'
+    odds: '2.50',
+    date: '14 oct 18.00'
   },
   {
     home: 'Manchester City',
     away: 'Chelsea',
     league: "Football - England - Premier League",
     outcome: 'home',
-    odds: '1.94'
+    odds: '1.94',
+    date: '12 oct 20.00'
   },
   {
     home: 'Leicester',
     away: 'Everton',
     league: "Football - England - Premier League",
     outcome: 'home',
-    odds: '1.67'
+    odds: '1.67',
+    date: '12 oct 20.00'
   }
 ]
 

@@ -34,7 +34,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   leagueText: {
-    textAlign: 'center'
+    textAlign: 'center',
+    textAlign: 'center',
+    color: "rgba(0, 0, 0, 0.54)"
   }
 });
 

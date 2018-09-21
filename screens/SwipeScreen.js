@@ -1,6 +1,6 @@
 import React from 'react';
 import Swiper from 'react-native-deck-swiper'
-import { StyleSheet, View, Text, Image } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Card from '../components/Cards'
 import { DATA } from '../mockData/bets'
 import { FontAwesome } from '@expo/vector-icons'
@@ -26,47 +26,48 @@ export default class SwipeScreen extends React.Component {
     this.setState({ cardIndex: this.state.cardIndex + 1 })
   }
 
+  // componentDidMount() {
+  //   setTimeout(()=> { 
+  //     this.setState({
+  //       isLoading: false
+  //     })
+  //   }, 3000);
+  // }
 
-  onSwipeAll = () => {
-    console.log('onSwipedAll')
-  }
-
-  componentDidMount() {
-    setTimeout(()=> { 
-      this.setState({
-        isLoading: false
-      })
-    }, 3000);
+  stopLoad = () => {
+    this.setState({
+      isLoading: false
+    })
   }
 
   render() {
     return (
-      <LinearGradient
-        style={styles.container}
-        colors={['#F58249', '#FD5C3C']}
-        start={[0, 0]}
-        end={[1, 0]}>
-        {this.state.isLoading &&
-          <Loading />
-        }
-        {!this.state.isLoading && 
-          <Swiper
-              cards={this.state.cards}
-              renderCard={this.renderCard}
-              onSwiped={this.onSwipe}
-              onSwipedAll={this.onSwipeAll}
-              cardIndex={this.state.cardIndex}
-              backgroundColor={'transparent'}
-              stackSize={3}
-              cardVerticalMargin={100}
-              marginBottom={50}
-              infinite={true}
-              overlayLabels={labelConfig}
-              overlayOpacityHorizontalThreshold={10}
-              >
-          </Swiper>
-        }
-      </LinearGradient>
+        <LinearGradient
+          style={styles.container}
+          colors={['#F58249', '#FD5C3C']}
+          start={[0, 0]}
+          end={[1, 0]}>
+          {this.state.isLoading &&
+            <Loading click={this.stopLoad} />
+          }
+          {!this.state.isLoading && 
+            <Swiper
+                cards={this.state.cards}
+                renderCard={this.renderCard}
+                onSwiped={this.onSwipe}
+                cardIndex={this.state.cardIndex}
+                backgroundColor={'transparent'}
+                stackSize={3}
+                cardVerticalMargin={100}
+                marginBottom={50}
+                infinite={true}
+                overlayLabels={labelConfig}
+                overlayOpacityHorizontalThreshold={10}
+                >
+            </Swiper>
+          }
+        </LinearGradient>
+
     );
   }
 }
