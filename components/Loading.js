@@ -21,18 +21,16 @@ export default class Loading extends React.Component {
     return (
       <View style={styles.container}>
         <Image style={styles.image} source={require('../media/logo.png')} />
-        <Text style={styles.text}>
-          My stake
-        </Text>
+        <Text style={styles.text}>My stake</Text>
         <TextInput
-          style={{height: 40, width: 45, paddingLeft: 8, color: "white", fontSize: 20}}
+          style={styles.input}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
           underlineColorAndroid="white"
           keyboardType = 'numeric'
         />
-          <TouchableOpacity onPress={this.props.click} style={styles.touch}>
-            <Text style={styles.button}>
+          <TouchableOpacity onPress={this.props.click} style={styles.touchWrapper}>
+            <Text style={styles.buttonText}>
               START
             </Text>
           </TouchableOpacity>
@@ -54,11 +52,18 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white'
   },
-  touch: {
+  input: {
+    height: 40,
+    width: 45,
+    paddingLeft: 8,
+    color: "white",
+    fontSize: 20
+  },
+  touchWrapper: {
     backgroundColor: 'white',
     borderRadius: 6
   },
-  button: {
+  buttonText: {
     color: 'red',
     fontSize: 18,
     padding: 10,

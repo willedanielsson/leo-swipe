@@ -1,4 +1,4 @@
-const DATA = [
+const card_data = [
   {
     home: 'IFK Norrköping',
     away: 'AIK',
@@ -53,7 +53,7 @@ const betHistoryData = [
   {
     game: "Manchester United - Arsenal",
     date: "2018-09-21",
-    status: 'upcoming',
+    status: 'open',
     amount: 50,
     bet: "Manchester United wins",
     odds: '1.87'
@@ -84,4 +84,4 @@ const betHistoryData = [
   }
 ]
 
-export { DATA, betHistoryData }
+export { card_data, betHistoryData }

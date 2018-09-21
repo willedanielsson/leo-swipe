@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import { FontAwesome } from '@expo/vector-icons';
 
 export default class BetsItem extends React.Component {
   render() {
@@ -9,7 +8,7 @@ export default class BetsItem extends React.Component {
     
     let iconConfig
 
-    if(bet.status === 'upcoming') {
+    if(bet.status === 'open') {
       iconConfig = {
         color: '#FCBE31',
         label: 'Open'
@@ -52,18 +51,17 @@ const styles = StyleSheet.create({
     elevation: 2,
     backgroundColor: '#fff'
   },
+  topLine: {
+    height: 5,
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4
+  },
   wrapper: {
     flexDirection: 'column',
     paddingTop: 8,
     paddingBottom: 8,
     paddingLeft: 16,
     paddingRight: 16,
-   },
-   topLine: {
-     height: 5,
-     borderTopLeftRadius: 4,
-     borderTopRightRadius: 4,
-    //  backgroundColor: '#FCBE31'
    },
    topWrapper: {
     flex: 1,
@@ -79,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold'
   },
-    odds: {
+  odds: {
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
@@ -92,7 +90,7 @@ const styles = StyleSheet.create({
   game: {
     textAlign: 'center',
     color: "rgba(0, 0, 0, 0.54)"
-  },
+  }
 });
 
 BetsItem.propTypes = {

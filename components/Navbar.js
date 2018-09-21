@@ -12,9 +12,7 @@ export default class Navbar extends React.Component {
   }
 
   onPress(txt) {
-    if(txt) {
-      this.props.navigation.navigate(txt)
-    }
+    this.props.navigation.navigate(txt)
   }
 
   render() {
@@ -48,7 +46,7 @@ export default class Navbar extends React.Component {
         {this.props.navigation.state.index === 0 && 
           <View style={styles.item}></View>
         }
-        <View style={[styles.item, styles.logoContainer]}>
+        <View style={[styles.item, styles.balanceContainer]}>
           <Text style={styles.balanceText}>{navbarSettings.text}</Text>
         </View>
         {this.props.navigation.state.index === 0 && 
@@ -87,14 +85,9 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     marginLeft: 8
   },
-  logoContainer: {
+  balanceContainer: {
     alignItems: 'center',
     flex: 3
-  },
-  logoText: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: "#fff"
   },
   balanceText: {
     fontSize: 16,

@@ -2,8 +2,7 @@ import React from 'react';
 import Swiper from 'react-native-deck-swiper'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Card from '../components/Cards'
-import { DATA } from '../mockData/bets'
-import { FontAwesome } from '@expo/vector-icons'
+import { card_data } from '../mockData/bets'
 import { LinearGradient } from 'expo'
 import Loading from '../components/Loading';
 
@@ -12,7 +11,7 @@ export default class SwipeScreen extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      cards: DATA,
+      cards: card_data,
       cardIndex: 0,
       isLoading: true
     }
@@ -77,21 +76,20 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 15
   },
-  bet: {
-    marginLeft: 10,
-    backgroundColor: 'green',
-    transform: [{ rotate: '-15deg'}]
-  },
   nope: {
     marginRight: 10,
     backgroundColor: 'red',
     transform: [{ rotate: '15deg'}]
   },
+  bet: {
+    marginLeft: 10,
+    backgroundColor: 'green',
+    transform: [{ rotate: '-15deg'}]
+  },
   double: {
     backgroundColor: 'blue'
   }
 });
-
 
 const labelConfig = {
   left: {

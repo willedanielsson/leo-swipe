@@ -11,13 +11,12 @@ export default class BetScreen extends React.Component {
     return (
       <BetsItem bet={item} />
     )
-  };
+  }
+
   render() {
     return (
         <View style={styles.container}>
-          <View style={styles.item}>
-            <Settings />
-          </View>
+          <Settings />
           <View style={styles.list}>
             <Text style={styles.text}>My bets</Text>
             <FlatList
@@ -27,7 +26,7 @@ export default class BetScreen extends React.Component {
             />
           </View>
       </View>
-    );
+    )
   }
 }
 
@@ -37,12 +36,12 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#f7f7f7'
   },
+  list: {
+    marginTop: 100
+  },
   text: {
     fontSize: 24,
     fontWeight: 'bold',
     marginLeft: 8
-  },
-  list: {
-    marginTop: 100
   }
 })
