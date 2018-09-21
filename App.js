@@ -20,12 +20,12 @@ export default createMaterialTopTabNavigator(
 				tabBarLabel: "Bets"
 			})
     },
-    Settings: {
-      screen: SettingsScreen,
-      navigationOptions: () => ({
-				tabBarLabel: "Settings"
-			})
-    }
+    // Settings: {
+    //   screen: SettingsScreen,
+    //   navigationOptions: () => ({
+		// 		tabBarLabel: "Settings"
+		// 	})
+    // }
   },
   {
     swipeEnabled: false,

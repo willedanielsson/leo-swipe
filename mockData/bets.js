@@ -3,17 +3,20 @@ const DATA = [
     home: 'IFK Norrköping',
     away: 'AIK',
     outcome: 'home',
-    odds: '1.01'
+    odds: '1.01',
+    league:"Football - Sweden - Allsvenskan"
   },
   {
     home: 'Manchester United',
     away: 'Arsenal',
+    league: "Football - England - Premier League",
     outcome: 'home',
     odds: '1.87'
   },
   {
     home: 'Valencia',
     away: 'Atletico Madrid',
+    league: "Football - Spain - La Liga",
     outcome: 'draw',
     odds: '3.40'
   }

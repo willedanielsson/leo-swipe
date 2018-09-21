@@ -11,9 +11,10 @@ export default class Card extends React.Component {
       <View style={styles.card}>
         <TeamContainer card={card} />
         <BetContainer card={card} />
-        {/* <View style={styles.league}>
-          <Text>{card.league}</Text>
-        </View> */}
+        <View style={styles.league}>
+          <View style={{flex: 1}}></View>
+          <Text style={styles.leagueText}>{card.league}</Text>
+        </View>
       </View>
     )
   }
@@ -31,6 +32,9 @@ const styles = StyleSheet.create({
   },
   league: {
     flex: 1
+  },
+  leagueText: {
+    textAlign: 'center'
   }
 });
 

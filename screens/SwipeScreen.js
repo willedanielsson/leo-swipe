@@ -33,7 +33,9 @@ export default class SwipeScreen extends React.Component {
     return (
       <LinearGradient
         style={styles.container}
-        colors={['#F58249', '#FD5C3C']}>
+        colors={['#F58249', '#FD5C3C']}
+        start={[0, 0]}
+        end={[1, 0]}>
         <Swiper
             cards={this.state.cards}
             renderCard={this.renderCard}

@@ -52,11 +52,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     borderRadius: 4,
-    // borderWidth: 1,
-    // borderColor: "rgba(0, 0, 0, 0.12)",
     margin: 5,
     padding: 5,
-    elevation: 5
+    elevation: 2
    },
    date: {
     color: "rgba(0, 0, 0, 0.54)"
