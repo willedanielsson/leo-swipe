@@ -24,24 +24,36 @@ const DATA = [
 
 const betHistoryData = [
   {
-    game: "Manchester United vs Arsenal",
+    game: "Manchester United - Arsenal",
     date: "2018-09-21",
-    status: 'upcoming'
+    status: 'upcoming',
+    amount: 50,
+    bet: "Manchester United wins",
+    odds: '1.87'
   },
   {
-    game: "Chelsea vs Watford",
+    game: "Chelsea - Watford",
     date: "2018-08-23",
-    status: 'win'
+    status: 'win',
+    amount: 50,
+    bet: "Chelsea wins",
+    odds: '1.43'
   },
   {
-    game: "PSG vs Lyon",
+    game: "PSG - Lyon",
     date: "2018-08-21",
-    status: 'loss'
+    status: 'loss',
+    amount: 50,
+    bet: "PSG wins",
+    odds: '1.36'
   },
   {
-    game: "Elfsborg vs Hammarby",
+    game: "Elfsborg - Hammarby",
     date: "2018-06-12",
-    status: 'win'
+    status: 'win',
+    amount: 50,
+    bet: "Hammarby wins",
+    odds: '2.62'
   }
 ]
 

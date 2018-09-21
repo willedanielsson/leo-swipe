@@ -8,16 +8,16 @@ import { createMaterialTopTabNavigator } from 'react-navigation';
 
 export default createMaterialTopTabNavigator(
   {
-    Swipe: {
-      screen: SwipeScreen,
-      navigationOptions: () => ({
-				tabBarLabel: "Swipe"
-			})
-    },
     Bets: {
       screen: BetScreen,
       navigationOptions: () => ({
 				tabBarLabel: "Bets"
+			})
+    },
+    Swipe: {
+      screen: SwipeScreen,
+      navigationOptions: () => ({
+				tabBarLabel: "Swipe"
 			})
     },
     // Settings: {

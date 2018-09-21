@@ -11,38 +11,35 @@ export default class BetsItem extends React.Component {
 
     if(bet.status === 'upcoming') {
       iconConfig = {
-        name: 'adjust',
-        color: '#0084b4',
-        label: 'Upcoming'
+        color: '#FCBE31',
+        label: 'Open'
       }
     } else if(bet.status === 'win') {
       iconConfig = {
-        name: 'trophy',
         color: '#1daa63',
         label: 'Win'
       }
     } else {
       iconConfig = {
-        name: 'times',
         color: '#e60000',
         label: 'Loss'
       }
     }
 
     return (
-      <TouchableOpacity
-        style={styles.container}
-        onPress={() => console.log('Click')}
-      >
-        <View style={styles.leftWrapper}>
+      <View style={styles.container}>
+        <View style={[styles.topLine, {backgroundColor: iconConfig.color}]}></View>
+        <View style={styles.wrapper}>
+          <View style={styles.topWrapper}>
+            <Text style={styles.amount}>{bet.amount} kr</Text>
+            <Text style={styles.amount}>{iconConfig.label}</Text>
+          </View>
+          <Text style={styles.bet}>{bet.bet}</Text>
+          <Text style={styles.odds}>{bet.odds}</Text>
           <Text style={styles.date}>{bet.date}</Text>
-          <Text style={styles.item}>{bet.game}</Text>
+          <Text style={styles.game}>{bet.game}</Text>
         </View>
-        <View style={styles.rightWrapper}>
-          <FontAwesome name={iconConfig.name} size={50} color={iconConfig.color} />
-          <Text style={styles.statusText}>{iconConfig.label}</Text>
-        </View>
-      </TouchableOpacity>
+      </View>
     )
   }
 }
@@ -50,30 +47,50 @@ export default class BetsItem extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
     borderRadius: 4,
     margin: 5,
-    padding: 5,
-    elevation: 2
+    elevation: 2,
+    backgroundColor: '#fff'
+  },
+  wrapper: {
+    flexDirection: 'column',
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 16,
+    paddingRight: 16,
    },
-   date: {
-    color: "rgba(0, 0, 0, 0.54)"
+   topLine: {
+     height: 5,
+     borderTopLeftRadius: 4,
+     borderTopRightRadius: 4,
+    //  backgroundColor: '#FCBE31'
    },
-   leftWrapper: {
-     flex: 3,
-     padding: 10
-   },
-   item: {
-     fontSize: 22
-   },
-   rightWrapper: {
+   topWrapper: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-   },
-   statusText: {
-    fontSize: 14
-   }
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 14
+  },
+  amount: {
+   fontSize: 16
+  },
+  bet: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+    odds: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 24
+  },
+  date: {
+    textAlign: 'center'
+  },
+  game: {
+    textAlign: 'center'
+  },
 });
 
 BetsItem.propTypes = {
