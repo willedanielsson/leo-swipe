@@ -23,7 +23,7 @@ const betHistoryData = [
   {
     game: "Manchester United vs Arsenal",
     date: "2018-09-21",
-    status: 'ongoing'
+    status: 'upcoming'
   },
   {
     game: "Chelsea vs Watford",

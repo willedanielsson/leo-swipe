@@ -9,11 +9,11 @@ export default class BetsItem extends React.Component {
     
     let iconConfig
 
-    if(bet.status === 'ongoing') {
+    if(bet.status === 'upcoming') {
       iconConfig = {
         name: 'adjust',
         color: '#0084b4',
-        label: 'Ongoing'
+        label: 'Upcoming'
       }
     } else if(bet.status === 'win') {
       iconConfig = {
@@ -52,10 +52,11 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     borderRadius: 4,
-    borderWidth: 1,
-    borderColor: "rgba(0, 0, 0, 0.12)",
+    // borderWidth: 1,
+    // borderColor: "rgba(0, 0, 0, 0.12)",
     margin: 5,
-    padding: 5
+    padding: 5,
+    elevation: 5
    },
    date: {
     color: "rgba(0, 0, 0, 0.54)"

@@ -7,9 +7,7 @@ export default class TeamContainer extends React.Component {
     const { card } = this.props 
     return (
       <View style={styles.teamsContainer}>
-        <Text style={styles.teamText}>{card.home}</Text>
-        <Text style={styles.vsText}>vs</Text>
-        <Text style={styles.teamText}>{card.away}</Text>
+        <Text style={styles.teamText}>{card.home} - {card.away}</Text>
       </View>
     )
   }
@@ -18,22 +16,12 @@ export default class TeamContainer extends React.Component {
 const styles = StyleSheet.create({
   teamsContainer: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.12)',
-    backgroundColor: "#fd5c3c"
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   teamText: {
-    textAlign: "center",
-    fontSize: 26,
-    color: "#fff"
-  },
-  vsText: {
-    fontSize: 18,
-    textAlign: "center",
-    color: "#fff"
+    fontSize: 20,
+    textAlign: 'center'
   }
 });
 

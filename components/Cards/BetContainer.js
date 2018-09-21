@@ -28,16 +28,17 @@ const styles = StyleSheet.create({
   betContainer: {
     flex: 1,
     flexDirection: 'column',
-    marginTop: 20
+    marginTop: 10
   },
   outcomeText: {
     textAlign: "center",
-    fontSize: 22
+    fontSize: 30,
+    fontWeight: 'bold'
   },
   oddsText: {
     textAlign: "center",
     marginTop: 20,
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: 'bold'
   }
 });

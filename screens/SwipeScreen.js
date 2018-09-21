@@ -3,7 +3,8 @@ import Swiper from 'react-native-deck-swiper'
 import { StyleSheet, View } from 'react-native'
 import Card from '../components/Cards'
 import { DATA } from '../mockData/bets'
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons'
+import { LinearGradient } from 'expo'
 
 export default class SwipeScreen extends React.Component {
 
@@ -30,30 +31,31 @@ export default class SwipeScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <LinearGradient
+        style={styles.container}
+        colors={['#F58249', '#FD5C3C']}>
         <Swiper
             cards={this.state.cards}
             renderCard={this.renderCard}
             onSwiped={this.onSwipe}
             onSwipedAll={this.onSwipeAll}
             cardIndex={this.state.cardIndex}
-            backgroundColor={'#f7f7f7'}
+            backgroundColor={'transparent'}
             stackSize={3}
             cardVerticalMargin={100}
-            marginBottom={100}
+            marginBottom={50}
             infinite={true}
             overlayLabels={labelConfig}
             >
         </Swiper>
-      </View>
+      </LinearGradient>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#f7f7f7'
+    flex: 1
   }
 });
 

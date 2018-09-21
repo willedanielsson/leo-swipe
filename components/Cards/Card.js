@@ -11,6 +11,9 @@ export default class Card extends React.Component {
       <View style={styles.card}>
         <TeamContainer card={card} />
         <BetContainer card={card} />
+        {/* <View style={styles.league}>
+          <Text>{card.league}</Text>
+        </View> */}
       </View>
     )
   }
@@ -19,12 +22,15 @@ export default class Card extends React.Component {
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    borderRadius: 4,
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: "rgba(0, 0, 0, 0.12)",
     backgroundColor: "white",
     flexDirection: 'column',
     padding: 20
+  },
+  league: {
+    flex: 1
   }
 });
 
