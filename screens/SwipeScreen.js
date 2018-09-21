@@ -1,6 +1,6 @@
 import React from 'react';
 import Swiper from 'react-native-deck-swiper'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, Image } from 'react-native'
 import Card from '../components/Cards'
 import { DATA } from '../mockData/bets'
 import { FontAwesome } from '@expo/vector-icons'
@@ -62,6 +62,7 @@ export default class SwipeScreen extends React.Component {
               marginBottom={50}
               infinite={true}
               overlayLabels={labelConfig}
+              overlayOpacityHorizontalThreshold={10}
               >
           </Swiper>
         }
@@ -73,13 +74,35 @@ export default class SwipeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  text: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: 'white',
+    padding: 10,
+    borderWidth: 0,
+    borderRadius: 10,
+    marginTop: 15
+  },
+  bet: {
+    marginLeft: 10,
+    backgroundColor: 'green',
+    transform: [{ rotate: '-15deg'}]
+  },
+  nope: {
+    marginRight: 10,
+    backgroundColor: 'red',
+    transform: [{ rotate: '15deg'}]
+  },
+  double: {
+    backgroundColor: 'blue'
   }
 });
 
 
 const labelConfig = {
   left: {
-    element: <FontAwesome name="times-circle" size={50} color="#e60000" />,
+    element: <Text style={[styles.text, styles.nope]}>NOPE</Text>,
     title: 'NOPE',
     style: {
       wrapper: {
@@ -92,7 +115,7 @@ const labelConfig = {
     }
   },
   right: {
-    element: <FontAwesome name="check-circle" size={50} color="#1daa63" />,
+    element: <Text style={[styles.text, styles.bet]}>BET</Text>,
     title: 'BET',
     style: {
       wrapper: {
@@ -105,12 +128,9 @@ const labelConfig = {
     }
   },
   top: {
+    lement: <Text style={[styles.text, styles.double]}>DOUBLE</Text>,
     title: 'COMBO',
     style: {
-      label: {
-        backgroundColor: '#0084b4',
-        color: 'white'
-      },
       wrapper: {
         flexDirection: 'column',
         alignItems: 'center',

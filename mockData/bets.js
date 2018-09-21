@@ -19,6 +19,27 @@ const DATA = [
     league: "Football - Spain - La Liga",
     outcome: 'draw',
     odds: '3.40'
+  },
+  {
+    home: 'Napoli',
+    away: 'Juventus',
+    league: "Football - Italy - Serie A",
+    outcome: 'home',
+    odds: '2.50'
+  },
+  {
+    home: 'Manchester City',
+    away: 'Chelsea',
+    league: "Football - England - Premier League",
+    outcome: 'home',
+    odds: '1.94'
+  },
+  {
+    home: 'Leicester',
+    away: 'Everton',
+    league: "Football - England - Premier League",
+    outcome: 'home',
+    odds: '1.67'
   }
 ]
 
