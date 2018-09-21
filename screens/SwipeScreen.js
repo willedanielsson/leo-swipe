@@ -26,14 +26,6 @@ export default class SwipeScreen extends React.Component {
     this.setState({ cardIndex: this.state.cardIndex + 1 })
   }
 
-  // componentDidMount() {
-  //   setTimeout(()=> { 
-  //     this.setState({
-  //       isLoading: false
-  //     })
-  //   }, 3000);
-  // }
-
   stopLoad = () => {
     this.setState({
       isLoading: false

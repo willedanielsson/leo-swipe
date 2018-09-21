@@ -1,19 +1,42 @@
 
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View, Image } from 'react-native'
-import { Bubbles } from 'react-native-loader';
+import { StyleSheet, View, Image, TouchableOpacity, Text, TextInput } from 'react-native'
 
 export default class Loading extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: '50' };
+  }
+
+  change(value) {
+    this.setState(() => {
+      return {
+        value: parseFloat(value),
+      };
+    });
+  }
+
   render() {
 
     return (
-      <TouchableOpacity
-        onPress={this.props.click}
-        style={styles.container}
-      >
+      <View style={styles.container}>
         <Image style={styles.image} source={require('../media/logo.png')} />
-        <Bubbles size={10} color="rgba(255, 255, 255, 0.87)" />
-      </TouchableOpacity>
+        <Text style={styles.text}>
+          My stake
+        </Text>
+        <TextInput
+          style={{height: 40, width: 45, paddingLeft: 8, color: "white", fontSize: 20}}
+          onChangeText={(text) => this.setState({text})}
+          value={this.state.text}
+          underlineColorAndroid="white"
+          keyboardType = 'numeric'
+        />
+          <TouchableOpacity onPress={this.props.click} style={styles.touch}>
+            <Text style={styles.button}>
+              START
+            </Text>
+          </TouchableOpacity>
+      </View>
     )
   }
 }
@@ -25,5 +48,20 @@ const styles = StyleSheet.create({
   },
   image: {
     marginBottom: 40
+  },
+  text: {
+    textAlign: 'center',
+    fontSize: 20,
+    color: 'white'
+  },
+  touch: {
+    backgroundColor: 'white',
+    borderRadius: 6
+  },
+  button: {
+    color: 'red',
+    fontSize: 18,
+    padding: 10,
+    fontWeight: 'bold'
   }
 });
