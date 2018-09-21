@@ -86,10 +86,12 @@ const styles = StyleSheet.create({
     marginBottom: 24
   },
   date: {
-    textAlign: 'center'
+    textAlign: 'center',
+    color: "rgba(0, 0, 0, 0.54)"
   },
   game: {
-    textAlign: 'center'
+    textAlign: 'center',
+    color: "rgba(0, 0, 0, 0.54)"
   },
 });
 

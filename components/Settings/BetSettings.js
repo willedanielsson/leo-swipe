@@ -21,7 +21,7 @@ export default class BetSettings extends React.Component {
         <View style={styles.myStake}>
           <Text style={styles.text}>My stake</Text>
           <TextInput
-            style={{height: 40, width: 60, marginLeft: 8}}
+            style={{height: 40, width: 45, marginLeft: 8, paddingLeft: 8}}
             onChangeText={(text) => this.setState({text})}
             value={this.state.text}
             keyboardType = 'numeric'

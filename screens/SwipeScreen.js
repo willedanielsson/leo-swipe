@@ -1,10 +1,11 @@
 import React from 'react';
 import Swiper from 'react-native-deck-swiper'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import Card from '../components/Cards'
 import { DATA } from '../mockData/bets'
 import { FontAwesome } from '@expo/vector-icons'
 import { LinearGradient } from 'expo'
+import Loading from '../components/Loading';
 
 export default class SwipeScreen extends React.Component {
 
@@ -12,7 +13,8 @@ export default class SwipeScreen extends React.Component {
     super(props)
     this.state = {
       cards: DATA,
-      cardIndex: 0
+      cardIndex: 0,
+      isLoading: true
     }
   }
 
@@ -29,6 +31,14 @@ export default class SwipeScreen extends React.Component {
     console.log('onSwipedAll')
   }
 
+  componentDidMount() {
+    setTimeout(()=> { 
+      this.setState({
+        isLoading: false
+      })
+    }, 3000);
+  }
+
   render() {
     return (
       <LinearGradient
@@ -36,20 +46,25 @@ export default class SwipeScreen extends React.Component {
         colors={['#F58249', '#FD5C3C']}
         start={[0, 0]}
         end={[1, 0]}>
-        <Swiper
-            cards={this.state.cards}
-            renderCard={this.renderCard}
-            onSwiped={this.onSwipe}
-            onSwipedAll={this.onSwipeAll}
-            cardIndex={this.state.cardIndex}
-            backgroundColor={'transparent'}
-            stackSize={3}
-            cardVerticalMargin={100}
-            marginBottom={50}
-            infinite={true}
-            overlayLabels={labelConfig}
-            >
-        </Swiper>
+        {this.state.isLoading &&
+          <Loading />
+        }
+        {!this.state.isLoading && 
+          <Swiper
+              cards={this.state.cards}
+              renderCard={this.renderCard}
+              onSwiped={this.onSwipe}
+              onSwipedAll={this.onSwipeAll}
+              cardIndex={this.state.cardIndex}
+              backgroundColor={'transparent'}
+              stackSize={3}
+              cardVerticalMargin={100}
+              marginBottom={50}
+              infinite={true}
+              overlayLabels={labelConfig}
+              >
+          </Swiper>
+        }
       </LinearGradient>
     );
   }
